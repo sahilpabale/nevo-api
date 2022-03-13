@@ -1,11 +1,11 @@
 // imports here
-
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
+const router = require("./router");
 
 // env checks
 if (process.env.NODE_ENV !== "production") {
@@ -37,3 +37,4 @@ app.use(cors());
 app.use(cookieParser());
 
 // router
+app.use("/api", router);
